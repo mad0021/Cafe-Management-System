@@ -13,7 +13,7 @@ namespace Cafe_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UsersForms());
+            Application.Run(new UserOrder());
         }
     }
 }

@@ -66,6 +66,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CafedbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CafedbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CafedbDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ItemsForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +137,17 @@
     </None>
     <None Include="CafedbDataSet.xss">
       <DependentUpon>CafedbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CafedbDataSet1.xsc">
+      <DependentUpon>CafedbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CafedbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CafedbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CafedbDataSet1.xss">
+      <DependentUpon>CafedbDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

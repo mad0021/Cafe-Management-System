@@ -54,7 +54,7 @@
             this.buttonItems.FlatAppearance.BorderSize = 0;
             this.buttonItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonItems.Location = new System.Drawing.Point(12, 130);
+            this.buttonItems.Location = new System.Drawing.Point(12, 127);
             this.buttonItems.Name = "buttonItems";
             this.buttonItems.Size = new System.Drawing.Size(226, 40);
             this.buttonItems.TabIndex = 24;

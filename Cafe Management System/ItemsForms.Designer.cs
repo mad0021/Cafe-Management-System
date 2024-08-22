@@ -44,7 +44,7 @@
             this.labelSellername = new System.Windows.Forms.Label();
             this.labelOrdernum = new System.Windows.Forms.Label();
             this.ItemGridView = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CatCb = new System.Windows.Forms.ComboBox();
             this.labelManageitems = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).BeginInit();
@@ -89,6 +89,7 @@
             this.labelClose.Size = new System.Drawing.Size(34, 38);
             this.labelClose.TabIndex = 18;
             this.labelClose.Text = "X";
+            this.labelClose.Click += new System.EventHandler(this.labelClose_Click);
             // 
             // button2
             // 
@@ -116,7 +117,7 @@
             this.panel1.Controls.Add(this.labelSellername);
             this.panel1.Controls.Add(this.labelOrdernum);
             this.panel1.Controls.Add(this.ItemGridView);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.CatCb);
             this.panel1.Controls.Add(this.labelManageitems);
             this.panel1.Location = new System.Drawing.Point(245, 53);
             this.panel1.Name = "panel1";
@@ -134,6 +135,7 @@
             this.buttonEdit.TabIndex = 21;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 
@@ -146,6 +148,7 @@
             this.buttonDelete.TabIndex = 20;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // labelItemlist
             // 
@@ -162,6 +165,7 @@
             // 
             // textBoxprice
             // 
+            this.textBoxprice.BackColor = System.Drawing.Color.Silver;
             this.textBoxprice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxprice.Location = new System.Drawing.Point(177, 323);
             this.textBoxprice.Name = "textBoxprice";
@@ -170,6 +174,7 @@
             // 
             // textBoxname
             // 
+            this.textBoxname.BackColor = System.Drawing.Color.Silver;
             this.textBoxname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxname.Location = new System.Drawing.Point(190, 242);
             this.textBoxname.Name = "textBoxname";
@@ -178,6 +183,7 @@
             // 
             // textBoxnumber
             // 
+            this.textBoxnumber.BackColor = System.Drawing.Color.Silver;
             this.textBoxnumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxnumber.Location = new System.Drawing.Point(218, 156);
             this.textBoxnumber.Name = "textBoxnumber";
@@ -208,6 +214,7 @@
             this.buttonAdd.TabIndex = 11;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelSellername
             // 
@@ -244,19 +251,20 @@
             this.ItemGridView.RowTemplate.Height = 28;
             this.ItemGridView.Size = new System.Drawing.Size(672, 552);
             this.ItemGridView.TabIndex = 6;
+            this.ItemGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemGridView_CellContentClick);
             // 
-            // comboBox1
+            // CatCb
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CatCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CatCb.FormattingEnabled = true;
+            this.CatCb.Items.AddRange(new object[] {
             "Food",
             "Bevearge"});
-            this.comboBox1.Location = new System.Drawing.Point(37, 73);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(279, 40);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.Text = "Catergory";
+            this.CatCb.Location = new System.Drawing.Point(37, 73);
+            this.CatCb.Name = "CatCb";
+            this.CatCb.Size = new System.Drawing.Size(279, 40);
+            this.CatCb.TabIndex = 5;
+            this.CatCb.Text = "Catergory";
             // 
             // labelManageitems
             // 
@@ -285,6 +293,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ItemsForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.ItemsForms_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).EndInit();
@@ -304,7 +313,7 @@
         private System.Windows.Forms.Label labelSellername;
         private System.Windows.Forms.Label labelOrdernum;
         private System.Windows.Forms.DataGridView ItemGridView;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CatCb;
         private System.Windows.Forms.Label labelManageitems;
         private System.Windows.Forms.TextBox textBoxprice;
         private System.Windows.Forms.TextBox textBoxname;

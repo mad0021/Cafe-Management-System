@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ItemGridView = new System.Windows.Forms.DataGridView();
@@ -35,18 +36,26 @@
             this.labelSellername = new System.Windows.Forms.Label();
             this.labelOrderamount = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
             this.labelYourorder = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.labelQuantity = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxquantity = new System.Windows.Forms.TextBox();
+            this.textBoxsellername = new System.Windows.Forms.TextBox();
+            this.textBoxOrdernum = new System.Windows.Forms.TextBox();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.labelClose = new System.Windows.Forms.Label();
             this.buttonItems = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
+            this.cafedbDataSet1 = new Cafe_Management_System.CafedbDataSet1();
+            this.itemtblBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemtblTableAdapter = new Cafe_Management_System.CafedbDataSet1TableAdapters.ItemtblTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cafedbDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemtblBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,13 +86,16 @@
             // 
             // ItemGridView
             // 
+            this.ItemGridView.AutoGenerateColumns = false;
             this.ItemGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ItemGridView.DataSource = this.cafedbDataSet1;
             this.ItemGridView.Location = new System.Drawing.Point(364, 73);
             this.ItemGridView.Name = "ItemGridView";
             this.ItemGridView.RowHeadersWidth = 62;
             this.ItemGridView.RowTemplate.Height = 28;
             this.ItemGridView.Size = new System.Drawing.Size(757, 251);
             this.ItemGridView.TabIndex = 6;
+            this.ItemGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemGridView_CellContentClick);
             // 
             // labelOrdernum
             // 
@@ -129,22 +141,23 @@
             this.buttonAdd.BackColor = System.Drawing.Color.Silver;
             this.buttonAdd.FlatAppearance.BorderSize = 0;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Location = new System.Drawing.Point(19, 327);
+            this.buttonAdd.Location = new System.Drawing.Point(37, 322);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(226, 40);
             this.buttonAdd.TabIndex = 11;
             this.buttonAdd.Text = "Add to Cart";
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // dataGridView1
+            // dataGridViewOrder
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(364, 423);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(757, 251);
-            this.dataGridView1.TabIndex = 12;
+            this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrder.Location = new System.Drawing.Point(302, 408);
+            this.dataGridViewOrder.Name = "dataGridViewOrder";
+            this.dataGridViewOrder.RowHeadersWidth = 62;
+            this.dataGridViewOrder.RowTemplate.Height = 28;
+            this.dataGridViewOrder.Size = new System.Drawing.Size(819, 251);
+            this.dataGridViewOrder.TabIndex = 12;
             // 
             // labelYourorder
             // 
@@ -188,10 +201,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.textBoxquantity);
+            this.panel1.Controls.Add(this.textBoxsellername);
+            this.panel1.Controls.Add(this.textBoxOrdernum);
             this.panel1.Controls.Add(this.labelQuantity);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.labelYourorder);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dataGridViewOrder);
             this.panel1.Controls.Add(this.buttonAdd);
             this.panel1.Controls.Add(this.labelOrderamount);
             this.panel1.Controls.Add(this.labelSellername);
@@ -203,6 +219,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1138, 727);
             this.panel1.TabIndex = 10;
+            // 
+            // textBoxquantity
+            // 
+            this.textBoxquantity.BackColor = System.Drawing.Color.Silver;
+            this.textBoxquantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxquantity.Location = new System.Drawing.Point(159, 280);
+            this.textBoxquantity.Name = "textBoxquantity";
+            this.textBoxquantity.Size = new System.Drawing.Size(136, 19);
+            this.textBoxquantity.TabIndex = 19;
+            // 
+            // textBoxsellername
+            // 
+            this.textBoxsellername.BackColor = System.Drawing.Color.Silver;
+            this.textBoxsellername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxsellername.Location = new System.Drawing.Point(194, 219);
+            this.textBoxsellername.Name = "textBoxsellername";
+            this.textBoxsellername.Size = new System.Drawing.Size(136, 19);
+            this.textBoxsellername.TabIndex = 18;
+            // 
+            // textBoxOrdernum
+            // 
+            this.textBoxOrdernum.BackColor = System.Drawing.Color.Silver;
+            this.textBoxOrdernum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxOrdernum.Location = new System.Drawing.Point(194, 151);
+            this.textBoxOrdernum.Name = "textBoxOrdernum";
+            this.textBoxOrdernum.Size = new System.Drawing.Size(136, 19);
+            this.textBoxOrdernum.TabIndex = 17;
             // 
             // buttonLogout
             // 
@@ -257,6 +300,21 @@
             this.buttonUsers.UseVisualStyleBackColor = false;
             this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
             // 
+            // cafedbDataSet1
+            // 
+            this.cafedbDataSet1.DataSetName = "CafedbDataSet1";
+            this.cafedbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // itemtblBindingSource
+            // 
+            this.itemtblBindingSource.DataMember = "Itemtbl";
+            this.itemtblBindingSource.DataSource = this.cafedbDataSet1;
+            this.itemtblBindingSource.CurrentChanged += new System.EventHandler(this.itemtblBindingSource_CurrentChanged);
+            // 
+            // itemtblTableAdapter
+            // 
+            this.itemtblTableAdapter.ClearBeforeFill = true;
+            // 
             // UserOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -272,10 +330,13 @@
             this.Name = "UserOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserOrder";
+            this.Load += new System.EventHandler(this.UserOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cafedbDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemtblBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,7 +351,7 @@
         private System.Windows.Forms.Label labelSellername;
         private System.Windows.Forms.Label labelOrderamount;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewOrder;
         private System.Windows.Forms.Label labelYourorder;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelQuantity;
@@ -299,5 +360,11 @@
         private System.Windows.Forms.Label labelClose;
         private System.Windows.Forms.Button buttonItems;
         private System.Windows.Forms.Button buttonUsers;
+        private System.Windows.Forms.TextBox textBoxquantity;
+        private System.Windows.Forms.TextBox textBoxsellername;
+        private System.Windows.Forms.TextBox textBoxOrdernum;
+        private CafedbDataSet1 cafedbDataSet1;
+        private System.Windows.Forms.BindingSource itemtblBindingSource;
+        private CafedbDataSet1TableAdapters.ItemtblTableAdapter itemtblTableAdapter;
     }
 }

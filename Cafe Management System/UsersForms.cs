@@ -115,7 +115,7 @@ namespace Cafe_Management_System
         {
             if (textBoxPhone.Text == "" || textBoxusername.Text == "" || textBoxPassword.Text == "")
             {
-                MessageBox.Show("Please select a user to edit");
+                MessageBox.Show("Fill all the fields");
             }
             else
             {
@@ -130,7 +130,6 @@ namespace Cafe_Management_System
                 con.Close();
                 pupulate();
             }
-            
         }
     }
 }
